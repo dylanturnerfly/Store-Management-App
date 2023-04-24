@@ -16,13 +16,26 @@ public class MainActivity extends AppCompatActivity {
         FragmentManager fragmentManager = getSupportFragmentManager();
 
 
-         //Code for switching fragments when the Menu button is clicked.
-        Button buttonMenu = findViewById(R.id.buttonMenu);
-        buttonMenu.setOnClickListener(new View.OnClickListener() {
+        //Code for switching fragments when the Donut button is clicked.
+        Button buttonDonut = findViewById(R.id.buttonDonut);
+        buttonDonut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 fragmentManager.beginTransaction()
-                        .replace(R.id.fragmentContainer, MenuFragment.class, null)
+                        .replace(R.id.fragmentContainer, DonutFragment.class, null)
+//                        .setRecordingAllowed(true)
+                        .addToBackStack("name")
+                        .commit();
+            }
+        });
+
+        //Code for switching fragments when the Coffee button is clicked.
+        Button buttonCoffee = findViewById(R.id.buttonCoffee);
+        buttonCoffee.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                fragmentManager.beginTransaction()
+                        .replace(R.id.fragmentContainer, CoffeeFragment.class, null)
 //                        .setRecordingAllowed(true)
                         .addToBackStack("name")
                         .commit();

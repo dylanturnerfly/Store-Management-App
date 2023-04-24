@@ -14,11 +14,18 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/buttonMenu"
+            android:id="@+id/buttonDonut"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Menu" />
+
+        <Button
+            android:id="@+id/buttonCoffee"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Coffee" />
 
         <Button
             android:id="@+id/buttonCart"
@@ -43,9 +50,9 @@
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/fragmentContainer"
-            android:name="com.example.myapplication.MenuFragment"
+            android:name="com.example.myapplication.DonutFragment"
             android:layout_width="match_parent"
             android:layout_height="741dp"
-            tools:layout="@layout/fragment_menu" />
+            tools:layout="@layout/fragment_donut" />
     </LinearLayout>
 </androidx.appcompat.widget.LinearLayoutCompat>
