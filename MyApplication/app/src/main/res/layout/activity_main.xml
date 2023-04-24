@@ -45,7 +45,7 @@
             android:id="@+id/fragmentContainer"
             android:name="com.example.myapplication.MenuFragment"
             android:layout_width="match_parent"
-            android:layout_height="688dp"
+            android:layout_height="741dp"
             tools:layout="@layout/fragment_menu" />
     </LinearLayout>
 </androidx.appcompat.widget.LinearLayoutCompat>
