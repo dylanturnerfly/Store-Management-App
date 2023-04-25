@@ -11,16 +11,16 @@ import StoreManager.Order;
 import StoreManager.OrderHistory;
 
 public class MainActivity extends AppCompatActivity {
-    public static OrderHistory orderHistory;
-    public static int orderNumberGlobal;
-    public static Order currentOrderGlobal;
+    private OrderHistory orderHistory;
+    private int orderNumber;
+    private Order currentOrder;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        orderHistory = new OrderHistory();
-        orderNumberGlobal = 1;
-        currentOrderGlobal = new Order(orderNumberGlobal);
+        this.orderHistory = new OrderHistory();
+        this.orderNumber = 1;
+        this.currentOrder = new Order(orderNumber);
         setContentView(R.layout.activity_main);
 
         FragmentManager fragmentManager = getSupportFragmentManager();
@@ -95,5 +95,39 @@ public class MainActivity extends AppCompatActivity {
                 donutFragment.setMainActivity(MainActivity.this);
             }
         });
+    }
+
+    /**
+     * Places the current order when called.
+     * Increments the order number by one.
+     */
+    public void sendOrder() {
+        orderNumber++;
+        orderHistory.placeOrder(this.currentOrder);
+        this.currentOrder = new Order(orderNumber);
+    }
+
+    /**
+     * Getter method for the current order.
+     * @return reference to the current order object.
+     */
+    public Order getCurrentOrder() {
+        return this.currentOrder;
+    }
+
+    /**
+     * Getter method for the order history object
+     * @return reference to the order history object.
+     */
+    public OrderHistory getOrderHistory() {
+        return this.orderHistory;
+    }
+
+    /**
+     * Determines whether the order history is empty.
+     * @return true if empty, false if not.
+     */
+    public boolean historyEmpty() {
+        return orderHistory.isEmpty();
     }
 }

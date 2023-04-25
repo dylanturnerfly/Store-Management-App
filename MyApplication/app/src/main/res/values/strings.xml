@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">Shoopa Cafe</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
@@ -7,7 +7,6 @@
     <string name="addButton">Add to Cart</string>
     <string name="quantityUp">+</string>
     <string name="quantityDown">-</string>
-    <string name="pp"></string>
 
     <string-array name="donut_flavors">
         <item>Tuna Donut</item>
@@ -48,6 +47,13 @@
     <string name="subtotalFieldCoffee">Subtotal</string>
     <string name="orderButton">Add to Order</string>
     <string name="spinnerDescription">Select Coffee Size</string>
+
+    <string-array name="coffeeSizes">
+        <item>Short</item>
+        <item>Tall</item>
+        <item>Grande</item>
+        <item>Venti</item>
+    </string-array>
 
     //Cart
     <string name="subtotalFieldCart">Subtotal</string>
