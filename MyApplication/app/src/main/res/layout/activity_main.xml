@@ -8,6 +8,13 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainer"
+        android:name="com.example.myapplication.StartFragment"
+        android:layout_width="match_parent"
+        android:layout_height="741dp"
+        tools:layout="@layout/fragment_start" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -18,7 +25,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Menu" />
+            android:text="Donut" />
 
         <Button
             android:id="@+id/buttonCoffee"
@@ -41,18 +48,5 @@
             android:layout_weight="1"
             android:text="History" />
 
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-        <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/fragmentContainer"
-            android:name="com.example.myapplication.DonutFragment"
-            android:layout_width="match_parent"
-            android:layout_height="741dp"
-            tools:layout="@layout/fragment_donut" />
     </LinearLayout>
 </androidx.appcompat.widget.LinearLayoutCompat>

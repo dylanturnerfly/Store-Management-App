@@ -1,18 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout3"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".CoffeeFragment">
 
+    <ImageView
+        android:id="@+id/coffeeLogo"
+        android:layout_width="241dp"
+        android:layout_height="232dp"
+        android:layout_marginTop="70dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@tools:sample/avatars" />
+
+    <CheckBox
+        android:id="@+id/sweetCreamButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="@string/coffeeType1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:id="@+id/frenchVanillaButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/coffeeType2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/irishCreamButton"
+        app:layout_constraintStart_toEndOf="@+id/sweetCreamButton"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:id="@+id/irishCreamButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:text="@string/coffeeType3"
+        app:layout_constraintBaseline_toBaselineOf="@+id/frenchVanillaButton"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <CheckBox
+        android:id="@+id/caramelButton"
+        android:layout_width="101dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="90dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginBottom="300dp"
+        android:text="@string/coffeeType4"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sweetCreamButton" />
+
+    <CheckBox
+        android:id="@+id/mochaButton"
+        android:layout_width="84dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="90dp"
+        android:layout_marginBottom="300dp"
+        android:text="@string/coffeeType5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frenchVanillaButton" />
+
     <TextView
-        android:id="@+id/textView3"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#673AB7"
-        android:paddingTop="20dp"
-        android:text="Coffee Fragment"
-        android:textAlignment="center"
-        android:textSize="34sp"
-        android:textStyle="bold" />
-</FrameLayout>
+        android:id="@+id/subtotalField"
+        android:layout_width="349dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="150dp"
+        android:layout_marginEnd="26dp"
+        android:layout_marginBottom="150dp"
+        android:accessibilityHeading="false"
+        android:clickable="false"
+        android:text="@string/subtotalField"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sweetCreamButton"
+        app:layout_constraintVertical_bias="0.503" />
+
+    <Button
+        android:id="@+id/addOrderButton"
+        android:layout_width="349dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="60dp"
+        android:text="@string/orderButton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Spinner
+        android:id="@+id/coffeeSizeSpinner"
+        android:layout_width="347dp"
+        android:layout_height="46dp"
+        android:layout_marginBottom="215dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -2,4 +2,46 @@
     <string name="app_name">My Application</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    //Coffee
+    <string name="coffeeType1">Sweet Cream</string>
+    <string name="coffeeType2">French Vanilla</string>
+    <string name="coffeeType3">Irish Cream</string>
+    <string name="coffeeType4">Caramel</string>
+    <string name="coffeeType5">Mocha</string>
+    <string name="subtotalField">Subtotal</string>
+    <string name="orderButton">Add to Order</string>
+
+    <string name="addButton">+</string>
+    <string name="removeButton">-</string>
+
+    <string-array name="donut_flavors">
+        <item>Tuna Donut</item>
+        <item>Mint Donut</item>
+        <item>Space Donut</item>
+        <item>Sus Donut</item>
+        <item>Tomato Sauce Donut</item>
+        <item>Glowstone Donut</item>
+        <item>Strawberry Donut</item>
+        <item>Chocolate Donut</item>
+        <item>Mac n Cheese Donut</item>
+        <item>Cat Donut Hole</item>
+        <item>Dog Donut Hole</item>
+        <item>Banana Donut Hole</item>
+    </string-array>
+
+    <string-array name="donut_prices">
+        <item>$1.59</item>
+        <item>$1.59</item>
+        <item>$1.59</item>
+        <item>$1.59</item>
+        <item>$1.59</item>
+        <item>$1.59</item>
+        <item>$1.79</item>
+        <item>$1.79</item>
+        <item>$1.79</item>
+        <item>$0.39</item>
+        <item>$0.39</item>
+        <item>$0.39</item>
+    </string-array>
 </resources>
