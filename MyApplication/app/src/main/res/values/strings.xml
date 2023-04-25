@@ -17,7 +17,7 @@
         <item>Glowstone Donut</item>
         <item>Strawberry Donut</item>
         <item>Chocolate Donut</item>
-        <item>Mac n Cheese Donut</item>
+        <item>MacnCheese Donut</item>
         <item>Cat Donut Hole</item>
         <item>Dog Donut Hole</item>
         <item>Banana Donut Hole</item>
@@ -47,6 +47,8 @@
     <string name="subtotalFieldCoffee">Subtotal</string>
     <string name="orderButton">Add to Order</string>
     <string name="spinnerDescription">Select Coffee Size</string>
+    <string name="coffeeLogoDescription">Coffee Logo</string>
+    <string name="coffeeTitleDescription">Order Coffee</string>
 
     <string-array name="coffeeSizes">
         <item>Short</item>
@@ -59,5 +61,7 @@
     <string name="subtotalFieldCart">Subtotal</string>
     <string name="salesField">Sales Tax</string>
     <string name="totalField">Total</string>
+    <string name="cartTitleDescription">View Order</string>
+    <string name ="placeOrderButton">Place Order</string>
 
 </resources>

@@ -16,6 +16,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.Objects;
+import java.util.StringTokenizer;
+
+import StoreManager.*;
 
 /**
  * This is an Adapter class to be used to instantiate an adapter for the RecyclerView.
@@ -30,13 +34,15 @@ import java.util.ArrayList;
  * @author Lily Chang
  */
 public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemsHolder> {
+    private static MainActivity mainActivity;
     private Context context; //need the context to inflate the layout
     private ArrayList<Item> items; //need the data binding to each row of RecyclerView
     private static ArrayList<Integer> quantities;
 
-    public ItemsAdapter(Context context, ArrayList<Item> items) {
+    public ItemsAdapter(MainActivity mainActivityy, Context context, ArrayList<Item> items) {
         this.context = context;
         this.items = items;
+        mainActivity = mainActivityy;
         quantities = new ArrayList<>();
         for(int i = 0; i < getItemCount(); i++){
             quantities.add(1);
@@ -124,8 +130,38 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemsHolder>
             btn_add.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+                    StringTokenizer stringTokenizer = new StringTokenizer(tv_name, " ");
+                    String flavor = stringTokenizer.nextToken();
+                    String type = null;
+                    for (Flavors donutType: Flavors.values()){
+                        if (flavor.equals(donutType.toString())){
+                            type = donutType.getDonutType();
+                            break;
+                        }
+                    }
+                    MenuItem donut = null;
+                    switch (Objects.requireNonNull(type)) {
+                        case " Donut": {
+                            donut = new Yeast(flavor);
+                            break;
+                        }
+                        case " Cake Donut": {
+                            donut = new Cake(flavor);
+                            break;
+                        }
+                        case " Donut Hole": {
+                            donut = new Hole(flavor);
+                            break;
+                        }
+                        default:
+                            System.out.println("null donut why");
+                            break;
+                    }
+                    for(int i = 0; i < quantities.get(position); i++){
+                        mainActivity.getCurrentOrder().addItem(donut);
+                    }
                     Toast.makeText(itemView.getContext(),
-                            tv_name + " added.", Toast.LENGTH_LONG).show();
+                            quantities.get(position) + " " + tv_name + "(s) added.", Toast.LENGTH_LONG).show();
                 }
             });
         }

@@ -37,7 +37,7 @@ public class DonutFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_donut, container, false);
         recycler = view.findViewById(R.id.recyclerView);
         setupMenuItems(); //add the list of items to the ArrayList
-        ItemsAdapter adapter = new ItemsAdapter(view.getContext(), items); //create the adapter
+        ItemsAdapter adapter = new ItemsAdapter(mainActivity, view.getContext(), items); //create the adapter
         recycler.setAdapter(adapter); //bind the list of items to the RecyclerView
         recycler.setLayoutManager(new LinearLayoutManager(view.getContext()));
         return view;

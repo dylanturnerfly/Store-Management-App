@@ -8,23 +8,14 @@
     android:background="@color/coffeeScreen"
     tools:context=".CoffeeFragment">
 
-    <ImageView
-        android:id="@+id/coffeeLogo"
-        android:layout_width="241dp"
-        android:layout_height="232dp"
-        android:layout_marginTop="100dp"
-        android:background="@color/buttonColor"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:src="@tools:sample/avatars" />
-
     <CheckBox
         android:id="@+id/sweetCreamButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:text="@string/coffeeType1"
+        android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -34,6 +25,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/coffeeType2"
+        android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/irishCreamButton"
         app:layout_constraintStart_toEndOf="@+id/sweetCreamButton"
@@ -45,8 +38,11 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="20dp"
         android:text="@string/coffeeType3"
-        app:layout_constraintBaseline_toBaselineOf="@+id/frenchVanillaButton"
-        app:layout_constraintEnd_toEndOf="parent" />
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <CheckBox
         android:id="@+id/caramelButton"
@@ -56,6 +52,8 @@
         android:layout_marginTop="28dp"
         android:layout_marginBottom="300dp"
         android:text="@string/coffeeType4"
+        android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sweetCreamButton" />
@@ -68,6 +66,8 @@
         android:layout_marginEnd="90dp"
         android:layout_marginBottom="300dp"
         android:text="@string/coffeeType5"
+        android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/frenchVanillaButton" />
@@ -84,6 +84,8 @@
         android:background="@color/buttonColor"
         android:clickable="false"
         android:text="@string/subtotalFieldCoffee"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -113,9 +115,25 @@
 
     <ImageView
         android:id="@+id/imageView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="409dp"
+        android:layout_height="92dp"
+        android:contentDescription="@string/coffeeTitleDescription"
         android:src="@drawable/coffeetitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="61dp"
+        android:layout_marginTop="87dp"
+        android:layout_marginEnd="61dp"
+        android:layout_marginBottom="8dp"
+        android:contentDescription="@string/coffeeLogoDescription"
+        android:src="@drawable/coffee"
+        app:layout_constraintBottom_toTopOf="@+id/irishCreamButton"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

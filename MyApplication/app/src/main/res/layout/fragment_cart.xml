@@ -15,6 +15,7 @@
         android:layout_marginBottom="200dp"
         android:background="@color/buttonColor"
         android:text="@string/salesField"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -26,6 +27,7 @@
         android:layout_marginBottom="120dp"
         android:background="@color/buttonColor"
         android:text="@string/totalField"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -35,12 +37,14 @@
         android:layout_width="365dp"
         android:layout_height="102dp"
         android:layout_marginTop="20dp"
+        android:contentDescription="@string/cartTitleDescription"
         android:src="@drawable/vieworder"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ListView
+        android:id="@+id/cartListView"
         android:layout_width="365dp"
         android:layout_height="200dp"
         android:layout_marginTop="140dp"
@@ -56,6 +60,7 @@
         android:layout_marginBottom="280dp"
         android:background="@color/buttonColor"
         android:text="@string/subtotalFieldCart"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -65,7 +70,7 @@
         android:layout_width="341dp"
         android:layout_height="63dp"
         android:layout_marginBottom="20dp"
-        android:text="Button"
+        android:text="@string/placeOrderButton"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

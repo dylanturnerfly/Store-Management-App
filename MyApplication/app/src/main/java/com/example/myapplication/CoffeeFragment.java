@@ -135,13 +135,6 @@ public class CoffeeFragment extends Fragment implements AdapterView.OnItemSelect
     }
 
     /**
-     * Displays invalid selection error pop up.
-     */
-    private void invalidSelectionMessage(){
-
-    }
-
-    /**
      * Helper method for update(), creates the
      * desired quantities of the selected coffee.
      * @param add whether to add to cart.
@@ -175,7 +168,7 @@ public class CoffeeFragment extends Fragment implements AdapterView.OnItemSelect
         double total = 0;
         total += newCoffee.itemPrice();
         String totalString = formatDouble(total);
-        subtotal.setText(("$" + totalString));
+        subtotal.setText(("Subtotal: \n$" + totalString));
         if(add){
             total += mainActivity.getCurrentOrder().getCurrentTotal();
             mainActivity.getCurrentOrder().setCurrentTotal(total);
