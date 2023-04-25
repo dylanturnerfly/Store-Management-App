@@ -12,15 +12,16 @@
         android:id="@+id/imageView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:contentDescription="@string/historyTitle"
         android:src="@drawable/orderhistorytitle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ListView
-        android:layout_width="329dp"
-        android:layout_height="553dp"
-        android:layout_marginTop="50dp"
+        android:id="@+id/historyListView"
+        android:layout_width="377dp"
+        android:layout_height="584dp"
         android:layout_marginBottom="50dp"
         android:background="@color/buttonColor"
         app:layout_constraintBottom_toBottomOf="parent"

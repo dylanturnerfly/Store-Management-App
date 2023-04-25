@@ -161,7 +161,7 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemsHolder>
                         mainActivity.getCurrentOrder().addItem(donut);
                     }
                     Toast.makeText(itemView.getContext(),
-                            quantities.get(position) + " " + tv_name + "(s) added.", Toast.LENGTH_LONG).show();
+                            quantities.get(position) + " " + tv_name + "(s) added.", Toast.LENGTH_SHORT).show();
                 }
             });
         }

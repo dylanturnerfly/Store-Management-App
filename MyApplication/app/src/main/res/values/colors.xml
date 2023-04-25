@@ -16,5 +16,5 @@
     <color name="historyScreen">#ffccff</color>
     <color name="buttonColor">#ffe6fe</color>
 
-
+    <color name="text_color_primary">#1B2A59</color>
 </resources>

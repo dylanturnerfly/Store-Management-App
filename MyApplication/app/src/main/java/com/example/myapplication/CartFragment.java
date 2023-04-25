@@ -30,7 +30,9 @@ public class CartFragment extends Fragment implements AdapterView.OnItemClickLis
     private ListView listView;
     private ObservableArrayList<String> list;
     ArrayAdapter<String> items;
-    private final Flavors[] donutTypes = {Flavors.Tuna,Flavors.Mint,Flavors.Space,Flavors.Sus,Flavors.Tomato,Flavors.Glowstone,Flavors.Strawberry,Flavors.Chocolate,Flavors.MacnCheese,Flavors.Cat,Flavors.Dog,Flavors.Banana};
+    private final Flavors[] donutTypes = {Flavors.Tuna,Flavors.Mint,Flavors.Space,Flavors.Sus,
+            Flavors.Tomato,Flavors.Glowstone,Flavors.Strawberry,Flavors.Chocolate,
+            Flavors.MacnCheese,Flavors.Cat,Flavors.Dog,Flavors.Banana};
     TextView subTotal, sales, totalField;
     Button placeOrderButton;
 
@@ -99,7 +101,7 @@ public class CartFragment extends Fragment implements AdapterView.OnItemClickLis
                     //handle the "NO" click
         }).setNegativeButton("no", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int which) {
-                    Toast.makeText(adapterView.getContext(), list.get(i) + " not removed.", Toast.LENGTH_LONG).show();
+                    Toast.makeText(adapterView.getContext(), list.get(i) + " not removed.", Toast.LENGTH_SHORT).show();
             }
         });
         AlertDialog dialog = alert.create();
@@ -174,7 +176,7 @@ public class CartFragment extends Fragment implements AdapterView.OnItemClickLis
             @Override
             public void onClick(View view) {
                 if(list == null || list.isEmpty()){
-                    Toast.makeText(view.getContext(), "Cart is Empty!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(view.getContext(), "Cart is Empty!", Toast.LENGTH_SHORT).show();
                     return;
                 }
                 mainActivity.sendOrder();
@@ -183,7 +185,7 @@ public class CartFragment extends Fragment implements AdapterView.OnItemClickLis
                 subTotal.setText("Subtotal: \n $0.00");
                 sales.setText("Sales Tax: \n $0.00");
                 totalField.setText("Total: \n $0.00");
-                Toast.makeText(view.getContext(), "Order Placed!", Toast.LENGTH_LONG).show();
+                Toast.makeText(view.getContext(), "Order Placed!", Toast.LENGTH_SHORT).show();
             }
         });
     }
