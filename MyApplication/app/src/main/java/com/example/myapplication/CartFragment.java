@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -31,6 +32,7 @@ public class CartFragment extends Fragment implements AdapterView.OnItemClickLis
     ArrayAdapter<String> items;
     private final Flavors[] donutTypes = {Flavors.Tuna,Flavors.Mint,Flavors.Space,Flavors.Sus,Flavors.Tomato,Flavors.Glowstone,Flavors.Strawberry,Flavors.Chocolate,Flavors.MacnCheese,Flavors.Cat,Flavors.Dog,Flavors.Banana};
     TextView subTotal, sales, totalField;
+    Button placeOrderButton;
 
     public CartFragment() {
         // Required empty public constructor
@@ -46,7 +48,6 @@ public class CartFragment extends Fragment implements AdapterView.OnItemClickLis
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_cart, container, false);
         listView = view.findViewById(R.id.cartListView);
@@ -60,6 +61,7 @@ public class CartFragment extends Fragment implements AdapterView.OnItemClickLis
         sales = view.findViewById(R.id.salesFieldCart);
         totalField = view.findViewById(R.id.totalFieldCart);
         updateCheckOut();
+        setPlaceButtonOnClick(view);
         return view;
     }
 
@@ -150,9 +152,9 @@ public class CartFragment extends Fragment implements AdapterView.OnItemClickLis
         }
         double salesTax = total * 0.06625;
         double totalWithSales = salesTax + total;
-        subTotal.setText(("$" + formatDouble(total)));
-        sales.setText(("$" + formatDouble(salesTax)));
-        totalField.setText(("$" + formatDouble(totalWithSales)));
+        subTotal.setText(("Subtotal: \n $" + formatDouble(total)));
+        sales.setText(("Sales Tax: \n $" + formatDouble(salesTax)));
+        totalField.setText(("Total: \n $" + formatDouble(totalWithSales)));
     }
 
     /**
@@ -164,5 +166,25 @@ public class CartFragment extends Fragment implements AdapterView.OnItemClickLis
         String pattern = "0.00";
         DecimalFormat decimalFormat = new DecimalFormat(pattern);
         return decimalFormat.format(total);
+    }
+
+    private void setPlaceButtonOnClick(View view) {
+        placeOrderButton = view.findViewById(R.id.placeOrderButton);
+        placeOrderButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(list == null || list.isEmpty()){
+                    Toast.makeText(view.getContext(), "Cart is Empty!", Toast.LENGTH_LONG).show();
+                    return;
+                }
+                mainActivity.sendOrder();
+                list.clear();
+                items.clear();
+                subTotal.setText("Subtotal: \n $0.00");
+                sales.setText("Sales Tax: \n $0.00");
+                totalField.setText("Total: \n $0.00");
+                Toast.makeText(view.getContext(), "Order Placed!", Toast.LENGTH_LONG).show();
+            }
+        });
     }
 }
