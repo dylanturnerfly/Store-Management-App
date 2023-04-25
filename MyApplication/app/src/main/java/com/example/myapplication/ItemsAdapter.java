@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -33,10 +34,15 @@ import java.util.ArrayList;
 public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemsHolder> {
     private Context context; //need the context to inflate the layout
     private ArrayList<Item> items; //need the data binding to each row of RecyclerView
+    private static ArrayList<Integer> quantities;
 
     public ItemsAdapter(Context context, ArrayList<Item> items) {
         this.context = context;
         this.items = items;
+        quantities = new ArrayList<>();
+        for(int i = 0; i < getItemCount(); i++){
+            quantities.add(0);
+        }
     }
 
     /**
@@ -65,10 +71,13 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemsHolder>
      */
     @Override
     public void onBindViewHolder(@NonNull ItemsHolder holder, int position) {
-        //assign values for each row
-        holder.tv_name.setText(items.get(position).getItemName());
+        holder.tv_name = items.get(position).getItemName();
         holder.tv_price.setText(items.get(position).getUnitPrice());
         holder.im_item.setImageResource(items.get(position).getImage());
+
+        holder.position = holder.getAdapterPosition();
+        holder.quantityField.setText(Integer.toString(quantities.get(position)));
+
     }
 
     /**
@@ -85,22 +94,27 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemsHolder>
      * Get the views from the row layout file, similar to the onCreate() method.
      */
     public static class ItemsHolder extends RecyclerView.ViewHolder {
-        private TextView tv_name, tv_price;
+        private String tv_name;
+        private int position;
+        private TextView tv_price, quantityField;
         private ImageView im_item;
         private Button btn_add;
-        private Button btn_remove;
+        private Button quantityUp;
+        private Button quantityDown;
         private ConstraintLayout parentLayout; //this is the row layout
 
         public ItemsHolder(@NonNull View itemView) {
             super(itemView);
-            tv_name = itemView.findViewById(R.id.donutFlavor);
             tv_price = itemView.findViewById(R.id.donutPrice);
+            quantityField = itemView.findViewById(R.id.quantityField);
             im_item = itemView.findViewById(R.id.imageView);
             btn_add = itemView.findViewById(R.id.addButton);
-            btn_remove = itemView.findViewById(R.id.removeButton);
+            quantityUp = itemView.findViewById(R.id.quantityUp);
+            quantityDown = itemView.findViewById(R.id.quantityDown);
             parentLayout = itemView.findViewById(R.id.rowLayout);
             setAddButtonOnClick(itemView); //register the onClicklistener for the add button on each row.
-            setRemoveButtonOnClick(itemView); //register the onClickListener for the remove button on each row
+            setUpButtonOnClick(itemView);
+            setDownButtonOnClick(itemView);
         }
 
         /**
@@ -115,19 +129,19 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemsHolder>
                 public void onClick(View view) {
                     AlertDialog.Builder alert = new AlertDialog.Builder(itemView.getContext());
                     alert.setTitle("Add to order");
-                    alert.setMessage(tv_name.getText().toString());
+                    alert.setMessage(tv_name);
                     //handle the "YES" click
                     alert.setPositiveButton("yes", new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {
                             Toast.makeText(itemView.getContext(),
-                                    tv_name.getText().toString() + " added.", Toast.LENGTH_LONG).show();
+                                    tv_name + " added.", Toast.LENGTH_LONG).show();
 
                         }
                         //handle the "NO" click
                     }).setNegativeButton("no", new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {
                             Toast.makeText(itemView.getContext(),
-                                    tv_name.getText().toString() + " not added.", Toast.LENGTH_LONG).show();
+                                    tv_name + " not added.", Toast.LENGTH_LONG).show();
                         }
                     });
                     AlertDialog dialog = alert.create();
@@ -136,39 +150,24 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemsHolder>
             });
         }
 
-        /**
-         * Set the onClickListener for the remove button on each row.
-         * Clicking on the remove button will create an AlertDialog with the options of YES/NO
-         * @param itemView
-         */
-        private void setRemoveButtonOnClick(@NonNull View itemView) {
-            btn_remove.setOnClickListener(new View.OnClickListener() {
+        private void setUpButtonOnClick(@NonNull View itemView) {
+            quantityUp.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    AlertDialog.Builder alert = new AlertDialog.Builder(itemView.getContext());
-                    alert.setTitle("Remove from Order");
-                    alert.setMessage(tv_name.getText().toString());
-                    //handle the "YES" click
-                    alert.setPositiveButton("yes", new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int which) {
-                            if(true){ //TODO: check if donut can be removed from cart
-                                Toast.makeText(itemView.getContext(),
-                                        tv_name.getText().toString() + " removed.", Toast.LENGTH_LONG).show();
-                            } else {
-                                Toast.makeText(itemView.getContext(),
-                                        tv_name.getText().toString() + " is not in the cart.", Toast.LENGTH_LONG).show();
-                            }
+                    quantities.set(position, quantities.get(position)+1);
+                    quantityField.setText(Integer.toString(quantities.get(position)));
+                }
+            });
+        }
 
-                        }
-                        //handle the "NO" click
-                    }).setNegativeButton("no", new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int which) {
-                            Toast.makeText(itemView.getContext(),
-                                    tv_name.getText().toString() + " not removed.", Toast.LENGTH_LONG).show();
-                        }
-                    });
-                    AlertDialog dialog = alert.create();
-                    dialog.show();
+        private void setDownButtonOnClick(@NonNull View itemView) {
+            quantityDown.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if(quantities.get(position) - 1 >= 0) {
+                        quantities.set(position, quantities.get(position)-1);
+                        quantityField.setText(Integer.toString(quantities.get(position)));
+                    }
                 }
             });
         }

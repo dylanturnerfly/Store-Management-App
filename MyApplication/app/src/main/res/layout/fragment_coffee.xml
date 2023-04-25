@@ -5,13 +5,15 @@
     android:id="@+id/frameLayout3"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/coffeeScreen"
     tools:context=".CoffeeFragment">
 
     <ImageView
         android:id="@+id/coffeeLogo"
         android:layout_width="241dp"
         android:layout_height="232dp"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="100dp"
+        android:background="@color/buttonColor"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -79,8 +81,9 @@
         android:layout_marginEnd="26dp"
         android:layout_marginBottom="150dp"
         android:accessibilityHeading="false"
+        android:background="@color/buttonColor"
         android:clickable="false"
-        android:text="@string/subtotalField"
+        android:text="@string/subtotalFieldCoffee"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -100,9 +103,19 @@
     <Spinner
         android:id="@+id/coffeeSizeSpinner"
         android:layout_width="347dp"
-        android:layout_height="46dp"
+        android:layout_height="50dp"
         android:layout_marginBottom="215dp"
+        android:background="@color/buttonColor"
+        android:contentDescription="@string/spinnerDescription"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/coffeetitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

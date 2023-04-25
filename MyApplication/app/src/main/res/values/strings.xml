@@ -3,17 +3,11 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
-    //Coffee
-    <string name="coffeeType1">Sweet Cream</string>
-    <string name="coffeeType2">French Vanilla</string>
-    <string name="coffeeType3">Irish Cream</string>
-    <string name="coffeeType4">Caramel</string>
-    <string name="coffeeType5">Mocha</string>
-    <string name="subtotalField">Subtotal</string>
-    <string name="orderButton">Add to Order</string>
-
-    <string name="addButton">+</string>
-    <string name="removeButton">-</string>
+    //Donut
+    <string name="addButton">Add to Cart</string>
+    <string name="quantityUp">+</string>
+    <string name="quantityDown">-</string>
+    <string name="pp"></string>
 
     <string-array name="donut_flavors">
         <item>Tuna Donut</item>
@@ -44,4 +38,20 @@
         <item>$0.39</item>
         <item>$0.39</item>
     </string-array>
+
+    //Coffee
+    <string name="coffeeType1">Sweet Cream</string>
+    <string name="coffeeType2">French Vanilla</string>
+    <string name="coffeeType3">Irish Cream</string>
+    <string name="coffeeType4">Caramel</string>
+    <string name="coffeeType5">Mocha</string>
+    <string name="subtotalFieldCoffee">Subtotal</string>
+    <string name="orderButton">Add to Order</string>
+    <string name="spinnerDescription">Select Coffee Size</string>
+
+    //Cart
+    <string name="subtotalFieldCart">Subtotal</string>
+    <string name="salesField">Sales Tax</string>
+    <string name="totalField">Total</string>
+
 </resources>

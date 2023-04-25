@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 
 public class DonutFragment extends Fragment {
+    MainActivity mainActivity;
     RecyclerView recycler;
     private ArrayList<Item> items = new ArrayList<>();
     private int [] itemImages = {R.drawable.tunadonut, R.drawable.mintdonut, R.drawable.spacedonut,
@@ -51,5 +52,9 @@ public class DonutFragment extends Fragment {
         for (int i = 0; i < itemNames.length; i++) {
             items.add(new Item(itemNames[i], itemImages[i], itemPrices[i]));
         }
+    }
+
+    public void setMainActivity(MainActivity mainActivity) {
+        this.mainActivity = mainActivity;
     }
 }
