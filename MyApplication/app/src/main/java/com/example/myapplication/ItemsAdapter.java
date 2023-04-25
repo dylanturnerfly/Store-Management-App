@@ -17,6 +17,7 @@ import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 /**
@@ -41,7 +42,7 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemsHolder>
         this.items = items;
         quantities = new ArrayList<>();
         for(int i = 0; i < getItemCount(); i++){
-            quantities.add(0);
+            quantities.add(1);
         }
     }
 
@@ -71,13 +72,13 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemsHolder>
      */
     @Override
     public void onBindViewHolder(@NonNull ItemsHolder holder, int position) {
-        holder.tv_name = items.get(position).getItemName();
-        holder.tv_price.setText(items.get(position).getUnitPrice());
-        holder.im_item.setImageResource(items.get(position).getImage());
-
         holder.position = holder.getAdapterPosition();
-        holder.quantityField.setText(Integer.toString(quantities.get(position)));
+        holder.storedPrice = Double.parseDouble(formatDouble(Double.parseDouble(items.get(position).getUnitPrice())));
 
+        holder.tv_name = items.get(position).getItemName();
+        holder.tv_price.setText("$" + (holder.storedPrice * quantities.get(position)));
+        holder.im_item.setImageResource(items.get(position).getImage());
+        holder.quantityField.setText(Integer.toString(quantities.get(position)));
     }
 
     /**
@@ -96,11 +97,10 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemsHolder>
     public static class ItemsHolder extends RecyclerView.ViewHolder {
         private String tv_name;
         private int position;
+        private double storedPrice;
         private TextView tv_price, quantityField;
         private ImageView im_item;
-        private Button btn_add;
-        private Button quantityUp;
-        private Button quantityDown;
+        private Button btn_add, quantityUp, quantityDown;
         private ConstraintLayout parentLayout; //this is the row layout
 
         public ItemsHolder(@NonNull View itemView) {
@@ -156,6 +156,7 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemsHolder>
                 public void onClick(View view) {
                     quantities.set(position, quantities.get(position)+1);
                     quantityField.setText(Integer.toString(quantities.get(position)));
+                    tv_price.setText("$" + formatDouble(storedPrice * quantities.get(position)));
                 }
             });
         }
@@ -164,12 +165,22 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemsHolder>
             quantityDown.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    if(quantities.get(position) - 1 >= 0) {
+                    if(quantities.get(position) - 1 > 0) {
                         quantities.set(position, quantities.get(position)-1);
                         quantityField.setText(Integer.toString(quantities.get(position)));
+                        tv_price.setText("$" + formatDouble(storedPrice * quantities.get(position)));
+
                     }
                 }
             });
         }
+
+
+    }
+
+    public static String formatDouble(double total){
+        String pattern = "0.00";
+        DecimalFormat decimalFormat = new DecimalFormat(pattern);
+        return decimalFormat.format(total);
     }
 }
