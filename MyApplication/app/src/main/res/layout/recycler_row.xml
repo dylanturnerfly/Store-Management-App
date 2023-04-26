@@ -29,64 +29,66 @@
                 android:id="@+id/quantityUp"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:layout_marginStart="140dp"
-                android:layout_marginBottom="10dp"
+                android:layout_marginTop="65dp"
                 android:text="@string/quantityUp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+                app:layout_constraintStart_toEndOf="@+id/imageView"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
                 android:id="@+id/imageView"
-                android:layout_width="140dp"
-                android:layout_height="131dp"
+                android:layout_width="117dp"
+                android:layout_height="112dp"
+                android:layout_marginStart="10dp"
+                android:contentDescription="@string/donutImage"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="ImageContrastCheck"
                 tools:srcCompat="@tools:sample/avatars" />
 
             <Button
                 android:id="@+id/addButton"
                 android:layout_width="75dp"
                 android:layout_height="103dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginBottom="10dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="15dp"
                 android:text="@string/addButton"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
+                app:layout_constraintStart_toEndOf="@+id/quantityDown"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <Button
                 android:id="@+id/quantityDown"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:layout_marginEnd="100dp"
-                android:layout_marginBottom="10dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="1dp"
                 android:text="@string/quantityDown"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
+                app:layout_constraintStart_toEndOf="@+id/quantityField"
+                app:layout_constraintTop_toTopOf="@+id/quantityUp" />
 
             <TextView
                 android:id="@+id/quantityField"
                 android:layout_width="42dp"
                 android:layout_height="37dp"
-                android:layout_marginStart="195dp"
-                android:layout_marginBottom="15dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="9dp"
                 android:textAlignment="center"
                 android:textColor="@color/text_color_primary"
                 android:textSize="24sp"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+                app:layout_constraintStart_toEndOf="@+id/quantityUp"
+                app:layout_constraintTop_toTopOf="@+id/quantityUp" />
 
             <TextView
                 android:id="@+id/donutPrice"
                 android:layout_width="126dp"
                 android:layout_height="30dp"
-                android:layout_marginStart="150dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="20dp"
-                android:text="TextView"
                 android:textColor="@color/text_color_primary"
                 android:textSize="24sp"
                 android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imageView"
                 app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>

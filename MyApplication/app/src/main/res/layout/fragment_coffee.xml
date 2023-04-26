@@ -12,14 +12,14 @@
         android:id="@+id/sweetCreamButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginBottom="15dp"
         android:text="@string/coffeeType1"
         android:textColor="@color/text_color_primary"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toTopOf="@+id/caramelButton"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <CheckBox
         android:id="@+id/frenchVanillaButton"
@@ -29,62 +29,52 @@
         android:textColor="@color/text_color_primary"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/irishCreamButton"
-        app:layout_constraintStart_toEndOf="@+id/sweetCreamButton"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toBottomOf="@+id/sweetCreamButton"
+        app:layout_constraintStart_toEndOf="@+id/sweetCreamButton" />
 
     <CheckBox
         android:id="@+id/irishCreamButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="20dp"
         android:text="@string/coffeeType3"
         android:textColor="@color/text_color_primary"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toBottomOf="@+id/sweetCreamButton"
+        app:layout_constraintStart_toEndOf="@+id/frenchVanillaButton" />
 
     <CheckBox
         android:id="@+id/caramelButton"
-        android:layout_width="101dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="90dp"
-        android:layout_marginTop="28dp"
-        android:layout_marginBottom="300dp"
+        android:layout_width="121dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginBottom="15dp"
         android:text="@string/coffeeType4"
         android:textColor="@color/text_color_primary"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sweetCreamButton" />
+        app:layout_constraintBottom_toTopOf="@+id/coffeeSizeSpinner"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <CheckBox
         android:id="@+id/mochaButton"
-        android:layout_width="84dp"
+        android:layout_width="0dp"
         android:layout_height="48dp"
-        android:layout_marginTop="28dp"
-        android:layout_marginEnd="90dp"
-        android:layout_marginBottom="300dp"
         android:text="@string/coffeeType5"
         android:textColor="@color/text_color_primary"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/caramelButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/frenchVanillaButton" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/caramelButton"
+        tools:ignore="VisualLintButtonSize" />
 
     <TextView
         android:id="@+id/subtotalField"
-        android:layout_width="349dp"
+        android:layout_width="350dp"
         android:layout_height="48dp"
-        android:layout_marginStart="26dp"
-        android:layout_marginTop="150dp"
-        android:layout_marginEnd="26dp"
-        android:layout_marginBottom="150dp"
+        android:layout_marginBottom="25dp"
         android:accessibilityHeading="false"
         android:background="@color/buttonColor"
         android:clickable="false"
@@ -92,54 +82,52 @@
         android:textColor="@color/text_color_primary"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sweetCreamButton"
-        app:layout_constraintVertical_bias="0.503" />
-
-    <Button
-        android:id="@+id/addOrderButton"
-        android:layout_width="349dp"
-        android:layout_height="60dp"
-        android:layout_marginBottom="60dp"
-        android:text="@string/orderButton"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/addOrderButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <Button
+        android:id="@+id/addOrderButton"
+        android:layout_width="350dp"
+        android:layout_height="63dp"
+        android:layout_marginBottom="20dp"
+        android:text="@string/orderButton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="VisualLintButtonSize" />
+
     <Spinner
         android:id="@+id/coffeeSizeSpinner"
-        android:layout_width="347dp"
+        android:layout_width="350dp"
         android:layout_height="50dp"
-        android:layout_marginBottom="215dp"
+        android:layout_marginBottom="26dp"
         android:background="@color/buttonColor"
         android:contentDescription="@string/spinnerDescription"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/subtotalField"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/imageView4"
-        android:layout_width="409dp"
-        android:layout_height="92dp"
+        android:layout_width="350dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="20dp"
         android:contentDescription="@string/coffeeTitleDescription"
         android:src="@drawable/coffeetitle"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageView6"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="61dp"
-        android:layout_marginTop="87dp"
-        android:layout_marginEnd="61dp"
-        android:layout_marginBottom="8dp"
+        android:layout_width="290dp"
+        android:layout_height="259dp"
+        android:layout_marginBottom="10dp"
         android:contentDescription="@string/coffeeLogoDescription"
         android:src="@drawable/coffee"
-        app:layout_constraintBottom_toTopOf="@+id/irishCreamButton"
+        app:layout_constraintBottom_toTopOf="@+id/frenchVanillaButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        tools:ignore="ImageContrastCheck" />
 </androidx.constraintlayout.widget.ConstraintLayout>

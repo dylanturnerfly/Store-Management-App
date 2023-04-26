@@ -3,6 +3,12 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
+    //Main Activity
+    <string name="donutButton">Donut</string>
+    <string name="coffeeButton">Coffee</string>
+    <string name="cartButton">Cart</string>
+    <string name="historyButton">History</string>
+
     //Donut
     <string name="addButton">Add to Cart</string>
     <string name="quantityUp">+</string>
@@ -66,5 +72,9 @@
 
     //History
     <string name="historyTitle">Order History</string>
+    <string name="startDescription">Shoopa Cafe</string>
+    <string name="donutImage">Donut</string>
+    <string name="donut_logo">Donut Logo</string>
+    <string name="coffee_logo">Coffee Logo</string>
 
 </resources>

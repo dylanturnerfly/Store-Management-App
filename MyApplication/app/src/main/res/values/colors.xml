@@ -8,13 +8,12 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <color name="recyclerRowColor">#ffccff</color>
-    <color name="startScreen">#ffccff</color>
-    <color name="donutScreen">#fa8cf6</color>
+    <color name="recyclerRowColor">#fa8cf6</color>
+    <color name="startScreen">#FF6200EE</color>
+    <color name="donutScreen">#ffccff</color>
     <color name="coffeeScreen">#ffccff</color>
     <color name="cartScreen">#ffccff</color>
     <color name="historyScreen">#ffccff</color>
     <color name="buttonColor">#ffe6fe</color>
-
     <color name="text_color_primary">#1B2A59</color>
 </resources>

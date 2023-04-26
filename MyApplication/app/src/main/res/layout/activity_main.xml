@@ -1,52 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayoutCompat"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:background="@color/startScreen"
-    android:orientation="vertical"
     tools:context=".MainActivity">
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainer"
         android:name="com.example.myapplication.StartFragment"
-        android:layout_width="match_parent"
-        android:layout_height="741dp"
+        android:layout_width="411dp"
+        android:layout_height="743dp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonCart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:layout="@layout/fragment_start" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/buttonDonut"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Donut" />
+    <Button
+        android:id="@+id/buttonDonut"
+        android:layout_width="103dp"
+        android:layout_height="60dp"
+        android:text="@string/donutButton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
-        <Button
-            android:id="@+id/buttonCoffee"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Coffee" />
+    <Button
+        android:id="@+id/buttonCoffee"
+        android:layout_width="103dp"
+        android:layout_height="60dp"
+        android:text="@string/coffeeButton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/buttonDonut" />
 
-        <Button
-            android:id="@+id/buttonCart"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Cart" />
+    <Button
+        android:id="@+id/buttonCart"
+        android:layout_width="103dp"
+        android:layout_height="60dp"
+        android:text="@string/cartButton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/buttonCoffee" />
 
-        <Button
-            android:id="@+id/buttonHistory"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="History" />
+    <Button
+        android:id="@+id/buttonHistory"
+        android:layout_width="103dp"
+        android:layout_height="60dp"
+        android:text="@string/historyButton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/buttonCart" />
 
-    </LinearLayout>
-</androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

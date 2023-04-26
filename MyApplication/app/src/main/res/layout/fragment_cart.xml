@@ -10,36 +10,36 @@
 
     <TextView
         android:id="@+id/salesFieldCart"
-        android:layout_width="347dp"
+        android:layout_width="350dp"
         android:layout_height="59dp"
-        android:layout_marginBottom="200dp"
+        android:layout_marginBottom="21dp"
         android:background="@color/buttonColor"
         android:text="@string/salesField"
         android:textColor="@color/text_color_primary"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/totalFieldCart"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/totalFieldCart"
-        android:layout_width="347dp"
+        android:layout_width="350dp"
         android:layout_height="59dp"
-        android:layout_marginBottom="120dp"
+        android:layout_marginBottom="37dp"
         android:background="@color/buttonColor"
         android:text="@string/totalField"
         android:textColor="@color/text_color_primary"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/placeOrderButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="365dp"
-        android:layout_height="102dp"
+        android:layout_width="350dp"
+        android:layout_height="100dp"
         android:layout_marginTop="20dp"
         android:contentDescription="@string/cartTitleDescription"
         android:src="@drawable/vieworder"
@@ -49,31 +49,31 @@
 
     <ListView
         android:id="@+id/cartListView"
-        android:layout_width="365dp"
+        android:layout_width="350dp"
         android:layout_height="200dp"
-        android:layout_marginTop="140dp"
+        android:layout_marginBottom="52dp"
         android:background="@color/buttonColor"
+        app:layout_constraintBottom_toTopOf="@+id/subtotalCart"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/subtotalCart"
-        android:layout_width="347dp"
+        android:layout_width="350dp"
         android:layout_height="59dp"
-        android:layout_marginBottom="280dp"
+        android:layout_marginBottom="21dp"
         android:background="@color/buttonColor"
         android:text="@string/subtotalFieldCart"
         android:textColor="@color/text_color_primary"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/salesFieldCart"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/placeOrderButton"
-        android:layout_width="341dp"
+        android:layout_width="350dp"
         android:layout_height="63dp"
         android:layout_marginBottom="20dp"
         android:text="@string/placeOrderButton"
