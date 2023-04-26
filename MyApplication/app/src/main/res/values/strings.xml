@@ -76,5 +76,6 @@
     <string name="donutImage">Donut</string>
     <string name="donut_logo">Donut Logo</string>
     <string name="coffee_logo">Coffee Logo</string>
+    <string name="donuts_title">Donuts Title</string>
 
 </resources>
